@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apartment Finder</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .export-button { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+<p>Поточний курс долара США: <span th:text="${exchangeRate}"></span></p>
+<button class="export-button" onclick="window.location.href='/api/export'">Експорт в Excel</button>
+<table>
+    <tr>
+        <th>Оголошення</th>
+        <th>Ціна</th>
+        <th>Посилання</th>
+    </tr>
+    <tr th:each="apartment : ${apartments}">
+        <td th:text="${apartment.title}"></td>
+        <td th:text="${apartment.price}"></td>
+        <td><a th:href="${apartment.link}" target="_blank">Переглянути</a></td>
+    </tr>
+</table>
+</body>
+</html>
