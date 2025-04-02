@@ -36,9 +36,9 @@ public class ApartmentController {
         List<Apartment> apartments = new ArrayList<>();
 
         for (Element element : elements) {
-            String title = element.select(".css-1sq4ur2").text();
-            String price = element.select(".css-6j1qjp").text();
-            String link = "https://www.olx.ua" + element.select(".css-qo0cxu").attr("href");
+            String title = element.select(".css-1g61gc2").text();
+            String price = element.select(".css-uj7mm0").text();
+            String link = "https://www.olx.ua" + element.select(".css-1tqlkj0").attr("href");
             apartments.add(new Apartment(title, price, link));
         }
         return ResponseEntity.ok(apartments);
